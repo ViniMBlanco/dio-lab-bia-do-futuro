@@ -1,149 +1,240 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# 💼 SeuFariaLimer — Consultor de Investimentos com IA Generativa
 
 ## Contexto
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
+Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. O **SeuFariaLimer** é um agente financeiro educacional que utiliza IA Generativa para:
 
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
+- **Democratizar** o acesso à orientação financeira de qualidade para a classe média brasileira
+- **Personalizar** respostas com base no perfil de risco e objetivos de cada cliente
+- **Simular** cenários de investimento com juros compostos, aposentadoria e comparativos de produtos
+- **Proteger** o usuário identificando golpes financeiros automaticamente antes de qualquer resposta
+- **Garantir segurança** e confiabilidade via RAG — o agente só responde com base em documentos curados
 
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+> O nome é uma brincadeira com o termo popular "Faria Limer" — o especialista do mercado financeiro paulistano. O "Seu" transforma esse conhecimento em algo particular, acessível e do seu lado.
 
 ---
 
-## O Que Você Deve Entregar
+## O Que Foi Entregue
 
 ### 1. Documentação do Agente
 
-Defina **o que** seu agente faz e **como** ele funciona:
+- **Caso de Uso:** Consultoria educacional de investimentos para a classe média brasileira (renda R$3k–R$15k/mês), resolvendo três barreiras: falta de acesso, complexidade dos produtos e medo de golpes
+- **Persona:** SeuFariaLimer — fala como um amigo que entende de finanças, sem julgamento e sem jargão desnecessário
+- **Arquitetura:** RAG com 3 camadas de contexto (system prompt + dados do cliente + ChromaDB) e roteamento de intenção antes do LLM
+- **Segurança:** Detector de golpes em Python puro (antes do LLM), RAG obrigatório para dados financeiros, suitability antes de qualquer produto, disclaimer automático CVM/ANBIMA
 
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+📄 [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
 
 ---
 
 ### 2. Base de Conhecimento
 
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
+Dados mockados na pasta [`data/`](./data/) com contexto brasileiro real:
 
 | Arquivo | Formato | Descrição |
 |---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
+| `transacoes.csv` | CSV | 49 transações de fevereiro/2025 para 3 clientes com categorias de gastos |
+| `historico_atendimento.csv` | CSV | 18 interações anteriores com intenção classificada por cliente |
+| `perfil_investidor.json` | JSON | 3 perfis completos (Moderado, Conservador, Arrojado) com suitability CVM |
+| `produtos_financeiros.json` | JSON | 10 produtos financeiros brasileiros com regras de adequação por perfil |
 
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
+Além dos dados, a base de conhecimento inclui 5 documentos financeiros curados em PT-BR vetorizados no ChromaDB:
 
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+| Documento | Conteúdo |
+|-----------|----------|
+| `01_perfil_investidor.md` | Suitability: conservador, moderado e arrojado |
+| `02_renda_fixa.md` | Tesouro Direto, CDB, LCI, LCA, tributação IR |
+| `03_renda_variavel.md` | Ações, ETFs, FIIs, BDRs, criptomoedas |
+| `04_conceitos_fundamentais.md` | Juros compostos, reserva de emergência, inflação |
+| `05_faq.md` | 15 perguntas frequentes do iniciante ao avançado |
+
+📄 [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
 
 ---
 
 ### 3. Prompts do Agente
 
-Documente os prompts que definem o comportamento do seu agente:
+- **System Prompt:** Persona + 5 regras inegociáveis (CVM) + detector de golpes + 3 exemplos few-shot + disclaimer obrigatório
+- **Exemplos de Interação:** 4 cenários completos (diagnóstico de perfil, análise de carteira, simulação de aposentadoria, alerta de golpe)
+- **Edge Cases:** Fora do escopo, dados inexistentes, tentativa de acesso a dados de terceiros, prompt injection
 
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
+📄 [`docs/03-prompts.md`](./docs/03-prompts.md)
 
 ---
 
 ### 4. Aplicação Funcional
 
-Desenvolva um **protótipo funcional** do seu agente:
+Interface Streamlit com 4 abas funcionais:
 
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
+| Aba | Funcionalidade |
+|-----|---------------|
+| 💬 Chat | Conversa com o agente — RAG + perfil do cliente + memória de sessão + sugestões clicáveis |
+| 🧮 Simulações | Juros compostos e simulador de aposentadoria com gráficos Plotly interativos |
+| 📊 Gastos | Análise de gastos mensais por categoria com benchmarks e evolução de saldo |
+| 📈 Mercado | Taxas de referência, tabela de produtos do perfil e comparador de rentabilidade líquida |
 
-📁 **Pasta:** [`src/`](./src/)
+📁 Código na raiz do projeto — veja **Como Rodar** abaixo
 
 ---
 
 ### 5. Avaliação e Métricas
 
-Descreva como você avalia a qualidade do seu agente:
+8 testes estruturados com critérios de aprovação explícitos:
 
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
+| Teste | O que valida |
+|-------|-------------|
+| T1 | Consulta de gastos a partir do CSV |
+| T2 | Recomendação de produto respeitando o perfil |
+| T3 | Redirecionamento de perguntas fora do escopo |
+| T4 | Admissão de produto inexistente na base |
+| T5 | Detecção de golpe financeiro |
+| T6 | Simulação de aposentadoria com dados reais do cliente |
+| T7 | Persistência de contexto na memória de sessão |
+| T8 | Comparação de CDB vs LCI com cálculo correto de IR |
 
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
+📄 [`docs/04-metricas.md`](./docs/04-metricas.md)
 
 ---
 
 ### 6. Pitch
 
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
+Roteiro de 3 minutos com slides de apoio cobrindo: o problema (Brasileiros não investem por falta de conhecimento), a solução (assessor particular com IA), demonstração dos 3 fluxos principais e diferencial técnico (RAG + conformidade CVM + stack 100% gratuita).
 
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
+📄 [`docs/05-pitch.md`](./docs/05-pitch.md)
 
 ---
 
-## Ferramentas Sugeridas
+## Ferramentas Utilizadas
 
-Todas as ferramentas abaixo possuem versões gratuitas:
+| Categoria | Ferramenta |
+|-----------|-----------|
+| **LLM** | [Groq API](https://console.groq.com/) — Llama 3.3 70B (gratuito, 14.400 req/dia) |
+| **Interface** | [Streamlit](https://streamlit.io/) — interface web responsiva |
+| **Base Vetorial** | [ChromaDB](https://www.trychroma.com/) — banco vetorial local |
+| **Embeddings** | [Sentence Transformers](https://www.sbert.net/) — modelo multilíngue PT-BR |
+| **Orquestração** | [LangChain](https://www.langchain.com/) — chunking e pipeline RAG |
+| **Gráficos** | [Plotly](https://plotly.com/) — visualizações interativas |
+| **Dados de Mercado** | [yfinance](https://pypi.org/project/yfinance/) — cotações em tempo real |
 
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
+> **Custo total da stack: R$ 0,00/mês** — todas as ferramentas são gratuitas ou open-source.
 
 ---
 
 ## Estrutura do Repositório
 
 ```
-📁 lab-agente-financeiro/
+📁 dio-lab-bia-do-futuro/
 │
-├── 📄 README.md
+├── 📄 README.md                        # Este arquivo
 │
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
+├── 📁 data/                            # Dados mockados dos clientes
+│   ├── perfil_investidor.json          # 3 perfis com suitability CVM completo
+│   ├── produtos_financeiros.json       # 10 produtos com regras de adequação
+│   ├── historico_atendimento.csv       # 18 interações classificadas por intenção
+│   └── transacoes.csv                  # 49 transações de fev/2025
 │
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
+├── 📁 docs/                            # Documentação do desafio
+│   ├── 01-documentacao-agente.md       # Caso de uso, persona e arquitetura
+│   ├── 02-base-conhecimento.md         # Estratégia de dados e RAG
+│   ├── 03-prompts.md                   # System prompt e exemplos de interação
+│   ├── 04-metricas.md                  # 8 testes estruturados de avaliação
+│   └── 05-pitch.md                     # Roteiro do pitch de 3 minutos
 │
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
+├── 📁 core/                            # Lógica principal do agente
+│   ├── __init__.py
+│   ├── agent.py                        # Orquestrador (Groq + RAG + memória)
+│   ├── calculators.py                  # Simulações financeiras (Python puro)
+│   └── prompts.py                      # System prompt + detector de golpes
 │
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
+├── 📁 knowledge_base/                  # Base de conhecimento RAG
+│   ├── build_knowledge_base.py         # Vetoriza documentos no ChromaDB (1x)
+│   ├── retriever.py                    # Interface de consulta ao ChromaDB
+│   └── documents/                      # 5 documentos financeiros em PT-BR
 │
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+├── 📁 utils/
+│   └── market_data.py                  # Cotações via yfinance
+│
+├── 📁 assets/                          # Imagens e diagramas
+│
+├── 📄 app.py                           # Aplicação principal (Streamlit)
+├── 📄 requirements.txt                 # Dependências Python
+├── 📄 .env.example                     # Template de variáveis de ambiente
+└── 📄 .gitignore                       # Arquivos ignorados pelo Git
 ```
 
 ---
 
-## Dicas Finais
+## Como Rodar
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+### Pré-requisitos
+- Python 3.11 (recomendado — Python 3.14 tem incompatibilidades com algumas libs)
+- Conta gratuita no [Groq](https://console.groq.com/keys) para obter a API key
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/ViniMBlanco/dio-lab-bia-do-futuro.git
+cd dio-lab-bia-do-futuro
+```
+
+### 2. Crie e ative o ambiente virtual
+
+```bash
+# Windows
+python -m venv venv
+venv\Scripts\activate
+
+# Mac/Linux
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Instale as dependências
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure a API key
+
+Copie o template e preencha com sua chave:
+
+```bash
+cp .env.example .env
+```
+
+Edite o `.env`:
+```
+GROQ_API_KEY=gsk_sua_chave_aqui
+```
+
+### 5. Construa a base de conhecimento (apenas uma vez)
+
+```bash
+cd knowledge_base
+python build_knowledge_base.py
+cd ..
+```
+
+### 6. Rode a aplicação
+
+```bash
+streamlit run app.py
+```
+
+Acesse em: **http://localhost:8501**
+
+---
+
+## Dicas de Uso
+
+- Troque o **cliente ativo** na sidebar para testar os 3 perfis: João (Moderado), Ana (Conservador), Lucas (Arrojado)
+- Use as **sugestões clicáveis** na aba Chat para explorar as funcionalidades rapidamente
+- A aba **Simulações** usa os dados reais do cliente selecionado como valores padrão
+- Para testar o detector de golpes, pergunte algo como *"vi um investimento pagando 5% ao mês garantido"*
+
+---
+
+## Aviso Legal
+
+O SeuFariaLimer é uma ferramenta de **educação financeira**. As informações fornecidas não constituem recomendação de investimento. Consulte sempre um assessor certificado pela **CVM/ANBIMA** antes de tomar decisões financeiras.
