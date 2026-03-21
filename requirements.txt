@@ -1,0 +1,27 @@
+# FinMentor — Dependências do Projeto
+# Instale com: pip install -r requirements.txt
+
+# ── Base de Conhecimento (RAG) ──────────────────────────────────
+chromadb==0.6.3                        # Banco vetorial local
+sentence-transformers==3.4.1           # Embeddings multilíngues gratuitos
+langchain==0.3.25                      # Framework de orquestração LLM
+langchain-community==0.3.24            # Integrações (ChromaDB, etc.)
+
+# ── LLM Providers (escolha um — todos gratuitos) ───────────────
+# Groq (recomendado: rápido, 14.400 req/dia grátis)
+groq==0.15.0
+
+# Google Gemini (alternativa: 1.000 req/dia grátis)
+google-generativeai==0.8.4
+
+# ── Frontend ────────────────────────────────────────────────────
+streamlit==1.44.0                      # Interface de chat web
+
+# ── Dados Financeiros em Tempo Real ────────────────────────────
+yfinance==0.2.54                       # Cotações, índices, dados históricos
+
+# ── Utilitários ─────────────────────────────────────────────────
+python-dotenv==1.0.1                   # Variáveis de ambiente (.env)
+pandas==2.2.3                          # Manipulação de dados
+numpy==2.2.3                           # Cálculos numéricos
+plotly==6.0.1                          # Gráficos interativos no Streamlit

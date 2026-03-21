@@ -1,0 +1,143 @@
+{
+  "clientes": [
+    {
+      "id": "CLI001",
+      "nome": "João Silva",
+      "idade": 34,
+      "profissao": "Engenheiro de Software",
+      "renda_mensal": 12000.00,
+      "patrimonio_total": 85000.00,
+      "perfil": {
+        "tipo": "Moderado",
+        "score": 62,
+        "data_avaliacao": "2024-09-15",
+        "respostas_suitability": {
+          "objetivo": "crescimento_patrimonio",
+          "prazo_investimento": "5_a_10_anos",
+          "reacao_queda_20pct": "aguarda_recuperacao",
+          "experiencia_previa": ["poupanca", "tesouro_direto", "cdb"],
+          "percentual_renda_investivel": "20_a_30_pct",
+          "tolerancia_perda_maxima": "15_pct"
+        }
+      },
+      "metas": [
+        {
+          "descricao": "Aposentadoria",
+          "valor_alvo": 1500000.00,
+          "prazo_anos": 26,
+          "prioridade": "alta"
+        },
+        {
+          "descricao": "Viagem internacional",
+          "valor_alvo": 25000.00,
+          "prazo_anos": 2,
+          "prioridade": "media"
+        }
+      ],
+      "carteira_atual": {
+        "reserva_emergencia": 18000.00,
+        "tesouro_selic": 22000.00,
+        "cdb": 15000.00,
+        "fii": 8000.00,
+        "acoes": 12000.00,
+        "poupanca": 10000.00
+      },
+      "conta": {
+        "agencia": "0042",
+        "numero": "12345-6",
+        "saldo_disponivel": 5200.00,
+        "limite_credito": 8000.00
+      }
+    },
+    {
+      "id": "CLI002",
+      "nome": "Ana Souza",
+      "idade": 52,
+      "profissao": "Médica",
+      "renda_mensal": 28000.00,
+      "patrimonio_total": 620000.00,
+      "perfil": {
+        "tipo": "Conservador",
+        "score": 28,
+        "data_avaliacao": "2024-11-03",
+        "respostas_suitability": {
+          "objetivo": "preservacao_patrimonio",
+          "prazo_investimento": "ate_5_anos",
+          "reacao_queda_20pct": "resgata_parte",
+          "experiencia_previa": ["poupanca", "cdb", "lci", "tesouro_direto"],
+          "percentual_renda_investivel": "30_a_40_pct",
+          "tolerancia_perda_maxima": "5_pct"
+        }
+      },
+      "metas": [
+        {
+          "descricao": "Aposentadoria em 8 anos",
+          "valor_alvo": 2000000.00,
+          "prazo_anos": 8,
+          "prioridade": "alta"
+        },
+        {
+          "descricao": "Educação dos filhos",
+          "valor_alvo": 150000.00,
+          "prazo_anos": 4,
+          "prioridade": "alta"
+        }
+      ],
+      "carteira_atual": {
+        "reserva_emergencia": 80000.00,
+        "tesouro_selic": 150000.00,
+        "tesouro_ipca": 200000.00,
+        "cdb": 120000.00,
+        "lci_lca": 70000.00
+      },
+      "conta": {
+        "agencia": "0101",
+        "numero": "98765-4",
+        "saldo_disponivel": 32000.00,
+        "limite_credito": 50000.00
+      }
+    },
+    {
+      "id": "CLI003",
+      "nome": "Lucas Martins",
+      "idade": 27,
+      "profissao": "Designer Freelancer",
+      "renda_mensal": 6500.00,
+      "patrimonio_total": 18000.00,
+      "perfil": {
+        "tipo": "Arrojado",
+        "score": 81,
+        "data_avaliacao": "2025-01-20",
+        "respostas_suitability": {
+          "objetivo": "maximizar_retorno",
+          "prazo_investimento": "acima_10_anos",
+          "reacao_queda_20pct": "compra_mais",
+          "experiencia_previa": ["acoes", "etf", "cripto", "fii"],
+          "percentual_renda_investivel": "15_a_20_pct",
+          "tolerancia_perda_maxima": "40_pct"
+        }
+      },
+      "metas": [
+        {
+          "descricao": "Independência financeira",
+          "valor_alvo": 3000000.00,
+          "prazo_anos": 20,
+          "prioridade": "alta"
+        }
+      ],
+      "carteira_atual": {
+        "reserva_emergencia": 8000.00,
+        "tesouro_selic": 2000.00,
+        "acoes": 5000.00,
+        "etf": 2000.00,
+        "cripto": 1000.00
+      },
+      "conta": {
+        "agencia": "0210",
+        "numero": "55432-1",
+        "saldo_disponivel": 1800.00,
+        "limite_credito": 3000.00
+      }
+    }
+  ]
+}

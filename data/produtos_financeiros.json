@@ -1,0 +1,260 @@
+{
+  "meta": {
+    "fonte": "dados_mockados_seufarialimer",
+    "data_atualizacao": "2025-03-01",
+    "aviso": "Taxas e condições são ilustrativas. Consulte sempre a instituição financeira."
+  },
+  "produtos": [
+    {
+      "id": "P001",
+      "categoria": "renda_fixa",
+      "subcategoria": "tesouro_direto",
+      "nome": "Tesouro Selic 2027",
+      "rentabilidade": {
+        "tipo": "pos_fixado",
+        "indexador": "Selic",
+        "percentual_indexador": 100,
+        "taxa_adicional": 0.0
+      },
+      "liquidez": "D+1",
+      "vencimento": "2027-03-01",
+      "investimento_minimo": 30.00,
+      "risco": "baixo",
+      "garantia": "Governo Federal",
+      "tributacao": {
+        "ir": "regressivo_22_5_a_15",
+        "isento": false
+      },
+      "perfis_adequados": ["conservador", "moderado", "arrojado"],
+      "uso_recomendado": "reserva_emergencia",
+      "observacoes": "Melhor opção para reserva de emergência. Liquidez diária com rendimento próximo ao CDI."
+    },
+    {
+      "id": "P002",
+      "categoria": "renda_fixa",
+      "subcategoria": "tesouro_direto",
+      "nome": "Tesouro IPCA+ 2035",
+      "rentabilidade": {
+        "tipo": "hibrido",
+        "indexador": "IPCA",
+        "percentual_indexador": 100,
+        "taxa_adicional": 6.8
+      },
+      "liquidez": "D+1 (com risco de marcação a mercado)",
+      "vencimento": "2035-05-15",
+      "investimento_minimo": 30.00,
+      "risco": "medio",
+      "garantia": "Governo Federal",
+      "tributacao": {
+        "ir": "regressivo_22_5_a_15",
+        "isento": false
+      },
+      "perfis_adequados": ["moderado", "arrojado"],
+      "uso_recomendado": "aposentadoria_longo_prazo",
+      "observacoes": "Ideal para proteção contra inflação no longo prazo. Risco de perda se resgatado antes do vencimento."
+    },
+    {
+      "id": "P003",
+      "categoria": "renda_fixa",
+      "subcategoria": "cdb",
+      "nome": "CDB Liquidez Diária 100% CDI",
+      "rentabilidade": {
+        "tipo": "pos_fixado",
+        "indexador": "CDI",
+        "percentual_indexador": 100,
+        "taxa_adicional": 0.0
+      },
+      "liquidez": "D+0 (imediata)",
+      "vencimento": null,
+      "investimento_minimo": 1.00,
+      "risco": "baixo",
+      "garantia": "FGC até R$250.000",
+      "tributacao": {
+        "ir": "regressivo_22_5_a_15",
+        "isento": false
+      },
+      "perfis_adequados": ["conservador", "moderado"],
+      "uso_recomendado": "reserva_emergencia_alternativa",
+      "observacoes": "Boa alternativa à poupança com liquidez imediata."
+    },
+    {
+      "id": "P004",
+      "categoria": "renda_fixa",
+      "subcategoria": "cdb",
+      "nome": "CDB 110% CDI - 12 meses",
+      "rentabilidade": {
+        "tipo": "pos_fixado",
+        "indexador": "CDI",
+        "percentual_indexador": 110,
+        "taxa_adicional": 0.0
+      },
+      "liquidez": "No vencimento",
+      "vencimento": "12_meses",
+      "investimento_minimo": 500.00,
+      "risco": "baixo",
+      "garantia": "FGC até R$250.000",
+      "tributacao": {
+        "ir": "20pct_ate_360_dias",
+        "isento": false
+      },
+      "perfis_adequados": ["conservador", "moderado"],
+      "uso_recomendado": "objetivo_curto_prazo",
+      "observacoes": "Rentabilidade acima da média com FGC. Ideal para quem não vai precisar do dinheiro por 1 ano."
+    },
+    {
+      "id": "P005",
+      "categoria": "renda_fixa",
+      "subcategoria": "lci",
+      "nome": "LCI 92% CDI - 90 dias",
+      "rentabilidade": {
+        "tipo": "pos_fixado",
+        "indexador": "CDI",
+        "percentual_indexador": 92,
+        "taxa_adicional": 0.0
+      },
+      "liquidez": "No vencimento (90 dias)",
+      "vencimento": "90_dias",
+      "investimento_minimo": 1000.00,
+      "risco": "baixo",
+      "garantia": "FGC até R$250.000",
+      "tributacao": {
+        "ir": "isento_pessoa_fisica",
+        "isento": true
+      },
+      "perfis_adequados": ["conservador", "moderado"],
+      "uso_recomendado": "objetivo_curto_medio_prazo",
+      "observacoes": "Isento de IR. 92% CDI isento equivale a ~108% CDI tributado para prazo de 1 ano."
+    },
+    {
+      "id": "P006",
+      "categoria": "renda_variavel",
+      "subcategoria": "etf",
+      "nome": "BOVA11 - ETF Ibovespa",
+      "ticker": "BOVA11",
+      "rentabilidade": {
+        "tipo": "variavel",
+        "indexador": "Ibovespa",
+        "percentual_indexador": 100
+      },
+      "liquidez": "D+2 (bolsa)",
+      "vencimento": null,
+      "investimento_minimo": 15.00,
+      "risco": "alto",
+      "garantia": "Nenhuma",
+      "tributacao": {
+        "ir": "15pct_sobre_lucro_acima_20k",
+        "isento": false
+      },
+      "perfis_adequados": ["moderado", "arrojado"],
+      "uso_recomendado": "renda_variavel_diversificada",
+      "taxa_administracao_aa": 0.10,
+      "observacoes": "Exposição ao mercado de ações brasileiro com ~80 empresas. Taxa de administração muito baixa."
+    },
+    {
+      "id": "P007",
+      "categoria": "renda_variavel",
+      "subcategoria": "etf",
+      "nome": "IVVB11 - ETF S&P 500",
+      "ticker": "IVVB11",
+      "rentabilidade": {
+        "tipo": "variavel",
+        "indexador": "S&P500 em BRL",
+        "percentual_indexador": 100
+      },
+      "liquidez": "D+2 (bolsa)",
+      "vencimento": null,
+      "investimento_minimo": 45.00,
+      "risco": "alto",
+      "garantia": "Nenhuma",
+      "tributacao": {
+        "ir": "15pct_sobre_lucro_acima_20k",
+        "isento": false
+      },
+      "perfis_adequados": ["moderado", "arrojado"],
+      "uso_recomendado": "diversificacao_internacional",
+      "taxa_administracao_aa": 0.24,
+      "observacoes": "Exposição às 500 maiores empresas americanas com proteção cambial natural."
+    },
+    {
+      "id": "P008",
+      "categoria": "renda_variavel",
+      "subcategoria": "fii",
+      "nome": "MXRF11 - Maxi Renda FII",
+      "ticker": "MXRF11",
+      "rentabilidade": {
+        "tipo": "variavel",
+        "dividend_yield_referencia_aa": 12.5
+      },
+      "liquidez": "D+2 (bolsa)",
+      "vencimento": null,
+      "investimento_minimo": 11.00,
+      "risco": "medio",
+      "garantia": "Nenhuma",
+      "tributacao": {
+        "ir_dividendos": "isento_pessoa_fisica",
+        "ir_ganho_capital": "20pct",
+        "isento": true
+      },
+      "perfis_adequados": ["moderado", "arrojado"],
+      "uso_recomendado": "renda_passiva_mensal",
+      "observacoes": "FII de papel. Dividendos mensais isentos de IR. DY aproximado: 12,5% a.a."
+    },
+    {
+      "id": "P009",
+      "categoria": "renda_variavel",
+      "subcategoria": "fii",
+      "nome": "BRCO11 - Bresco Logística",
+      "ticker": "BRCO11",
+      "rentabilidade": {
+        "tipo": "variavel",
+        "dividend_yield_referencia_aa": 9.8
+      },
+      "liquidez": "D+2 (bolsa)",
+      "vencimento": null,
+      "investimento_minimo": 95.00,
+      "risco": "medio",
+      "garantia": "Nenhuma",
+      "tributacao": {
+        "ir_dividendos": "isento_pessoa_fisica",
+        "ir_ganho_capital": "20pct",
+        "isento": true
+      },
+      "perfis_adequados": ["moderado", "arrojado"],
+      "uso_recomendado": "renda_passiva_mensal",
+      "observacoes": "FII de galpões logísticos. Inquilinos de alta qualidade. DY aproximado: 9,8% a.a."
+    },
+    {
+      "id": "P010",
+      "categoria": "previdencia",
+      "subcategoria": "pgbl",
+      "nome": "PGBL Multimercado",
+      "rentabilidade": {
+        "tipo": "variavel",
+        "indexador": "multimercado"
+      },
+      "liquidez": "Variável conforme plano",
+      "vencimento": null,
+      "investimento_minimo": 100.00,
+      "risco": "medio",
+      "garantia": "Nenhuma",
+      "tributacao": {
+        "ir": "regressivo_35_a_10pct",
+        "deducao_irpf": "ate_12pct_renda_bruta",
+        "isento": false
+      },
+      "perfis_adequados": ["moderado", "arrojado"],
+      "uso_recomendado": "aposentadoria_deducao_ir",
+      "taxa_administracao_aa": 1.0,
+      "observacoes": "Indicado para quem declara IR completo. Deduz até 12% da renda bruta. Chega a 10% de IR após 10 anos."
+    }
+  ],
+  "alertas_golpe": [
+    "Rentabilidade garantida acima da Selic",
+    "Pressão para investir rapidamente",
+    "Empresa sem registro CVM ou Banco Central",
+    "Recrutamento de novos investidores como forma de ganho",
+    "Retorno prometido de 1% ao dia ou mais",
+    "Operações em criptomoedas com retorno garantido",
+    "Contato não solicitado por WhatsApp ou Instagram oferecendo investimentos"
+  ]
+}

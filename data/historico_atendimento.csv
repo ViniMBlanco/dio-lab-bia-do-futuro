@@ -1,0 +1,19 @@
+id_atendimento,id_cliente,data,canal,intencao,mensagem_usuario,categoria_resposta,produto_mencionado,satisfacao,resolvido
+ATD001,CLI001,2024-08-10,chat,duvida_produto,O que é Tesouro Direto e como funciona?,educacional,Tesouro Selic,5,true
+ATD002,CLI001,2024-08-10,chat,simulacao,Se eu investir R$500 por mês no Tesouro Selic por 5 anos quanto terei?,simulacao,Tesouro Selic,5,true
+ATD003,CLI001,2024-09-15,chat,suitability,Quero entender meu perfil de investidor,suitability,,5,true
+ATD004,CLI001,2024-10-02,chat,duvida_produto,Qual a diferença entre CDB e LCI?,educacional,"CDB,LCI",4,true
+ATD005,CLI001,2024-10-02,chat,comparacao,LCI 90% CDI compensa mais que CDB 110% CDI?,comparacao,"LCI,CDB",5,true
+ATD006,CLI001,2024-11-20,chat,duvida_produto,O que são FIIs e como funcionam os dividendos?,educacional,MXRF11,5,true
+ATD007,CLI001,2025-01-08,chat,alerta_golpe,Recebi uma mensagem oferecendo 3% ao mês garantido. É confiável?,seguranca,,5,true
+ATD008,CLI001,2025-02-14,chat,simulacao,Quanto precisaria guardar por mês para ter R$1.000.000 em 20 anos?,simulacao,,4,true
+ATD009,CLI002,2024-10-15,chat,duvida_produto,Qual investimento é mais seguro para minha reserva de emergência?,educacional,Tesouro Selic,5,true
+ATD010,CLI002,2024-10-15,chat,carteira,Tenho R$620.000 investidos. Estou bem diversificada?,analise_carteira,,4,true
+ATD011,CLI002,2024-11-03,chat,suitability,Preciso reavaliar meu perfil de investidor,suitability,,5,true
+ATD012,CLI002,2024-11-18,chat,duvida_produto,O que é PGBL e como a dedução de IR funciona?,educacional,PGBL Multimercado,5,true
+ATD013,CLI002,2025-01-30,chat,meta,Como planejar investimentos para aposentadoria em 8 anos?,planejamento,,5,true
+ATD014,CLI003,2025-01-20,chat,suitability,Quero começar a investir. Por onde começo?,suitability,,5,true
+ATD015,CLI003,2025-01-20,chat,duvida_produto,O que é ETF? Vale mais que comprar ações individuais?,educacional,"BOVA11,IVVB11",5,true
+ATD016,CLI003,2025-02-01,chat,simulacao,Com R$1.000/mês investidos em BOVA11 por 20 anos quanto vou ter?,simulacao,BOVA11,4,true
+ATD017,CLI003,2025-02-15,chat,duvida_produto,Quanto é seguro colocar em criptomoedas?,educacional,,4,true
+ATD018,CLI003,2025-03-01,chat,carteira,Minha carteira está certa para meu perfil arrojado?,analise_carteira,,5,true

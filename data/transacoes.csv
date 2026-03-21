@@ -1,0 +1,50 @@
+id_transacao,id_cliente,data,descricao,categoria,valor,tipo,saldo_apos
+TRX001,CLI001,2025-02-01,Salario empresa tech,receita,12000.00,credito,12000.00
+TRX002,CLI001,2025-02-02,Aluguel apartamento,moradia,-2200.00,debito,9800.00
+TRX003,CLI001,2025-02-02,Aporte Tesouro Selic,investimento,-1500.00,debito,8300.00
+TRX004,CLI001,2025-02-03,Supermercado,alimentacao,-680.00,debito,7620.00
+TRX005,CLI001,2025-02-05,iFood delivery,alimentacao,-87.50,debito,7532.50
+TRX006,CLI001,2025-02-06,Farmacia,saude,-45.00,debito,7487.50
+TRX007,CLI001,2025-02-08,Netflix,lazer,-55.90,debito,7431.60
+TRX008,CLI001,2025-02-08,Spotify,lazer,-21.90,debito,7409.70
+TRX009,CLI001,2025-02-10,Uber,transporte,-134.00,debito,7275.70
+TRX010,CLI001,2025-02-10,Compra BOVA11,investimento,-380.00,debito,6895.70
+TRX011,CLI001,2025-02-12,Restaurante,alimentacao,-210.00,debito,6685.70
+TRX012,CLI001,2025-02-14,Academia,saude,-89.90,debito,6595.80
+TRX013,CLI001,2025-02-15,Conta de luz,moradia,-185.00,debito,6410.80
+TRX014,CLI001,2025-02-15,Internet,moradia,-120.00,debito,6290.80
+TRX015,CLI001,2025-02-17,Supermercado,alimentacao,-320.00,debito,5970.80
+TRX016,CLI001,2025-02-19,iFood delivery,alimentacao,-65.00,debito,5905.80
+TRX017,CLI001,2025-02-20,Bar com amigos,lazer,-180.00,debito,5725.80
+TRX018,CLI001,2025-02-22,Combustivel,transporte,-220.00,debito,5505.80
+TRX019,CLI001,2025-02-25,ChatGPT Plus,tecnologia,-100.00,debito,5405.80
+TRX020,CLI001,2025-02-25,Dividendos MXRF11,investimento,95.00,credito,5500.80
+TRX021,CLI001,2025-02-27,Supermercado,alimentacao,-300.80,debito,5200.00
+TRX022,CLI002,2025-02-01,Salario clinica medica,receita,28000.00,credito,28000.00
+TRX023,CLI002,2025-02-02,Aporte Tesouro IPCA,investimento,-8000.00,debito,20000.00
+TRX024,CLI002,2025-02-02,Aporte LCI,investimento,-5000.00,debito,15000.00
+TRX025,CLI002,2025-02-03,Condominio,moradia,-1800.00,debito,13200.00
+TRX026,CLI002,2025-02-05,Supermercado,alimentacao,-950.00,debito,12250.00
+TRX027,CLI002,2025-02-08,Colegio filhos,educacao,-3200.00,debito,9050.00
+TRX028,CLI002,2025-02-10,Plano de saude,saude,-2100.00,debito,6950.00
+TRX029,CLI002,2025-02-15,Restaurante,alimentacao,-450.00,debito,6500.00
+TRX030,CLI002,2025-02-20,Viagem fim de semana,lazer,-1200.00,debito,5300.00
+TRX031,CLI002,2025-02-25,Empregada,moradia,-1800.00,debito,3500.00
+TRX032,CLI002,2025-02-27,Gastos pessoais,outros,-500.00,debito,3000.00
+TRX033,CLI003,2025-02-01,Freela projeto mobile,receita,4500.00,credito,4500.00
+TRX034,CLI003,2025-02-05,Freela branding,receita,2000.00,credito,6500.00
+TRX035,CLI003,2025-02-03,Aluguel kitnet,moradia,-1200.00,debito,5300.00
+TRX036,CLI003,2025-02-05,Supermercado,alimentacao,-380.00,debito,4920.00
+TRX037,CLI003,2025-02-08,iFood,alimentacao,-95.00,debito,4825.00
+TRX038,CLI003,2025-02-10,Compra IVVB11,investimento,-420.00,debito,4405.00
+TRX039,CLI003,2025-02-12,Aporte Tesouro Selic,investimento,-500.00,debito,3905.00
+TRX040,CLI003,2025-02-14,Netflix,lazer,-55.90,debito,3849.10
+TRX041,CLI003,2025-02-15,Conta energia,moradia,-95.00,debito,3754.10
+TRX042,CLI003,2025-02-18,Uber,transporte,-110.00,debito,3644.10
+TRX043,CLI003,2025-02-20,Bar,lazer,-160.00,debito,3484.10
+TRX044,CLI003,2025-02-22,Supermercado,alimentacao,-245.00,debito,3239.10
+TRX045,CLI003,2025-02-24,Curso online,educacao,-89.00,debito,3150.10
+TRX046,CLI003,2025-02-25,Compra BOVA11,investimento,-340.00,debito,2810.10
+TRX047,CLI003,2025-02-27,Internet,moradia,-89.90,debito,2720.20
+TRX048,CLI003,2025-02-28,Spotify,lazer,-21.90,debito,2698.30
+TRX049,CLI003,2025-02-28,Ajuste saldo,outros,-898.30,debito,1800.00
