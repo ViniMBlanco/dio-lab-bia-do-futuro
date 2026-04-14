@@ -1,14 +1,11 @@
-# Segredos — NUNCA subir
+
 .env
 
-# Ambiente virtual — pesado e desnecessário no GitHub
 venv/
 .venv/
 
-# ChromaDB — gerado localmente, não precisa versionar
 knowledge_base/chroma_db/
 
-# Python
 __pycache__/
 *.pyc
 *.pyo
